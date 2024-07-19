@@ -1,0 +1,187 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar.light {
+  background-color: #f4f4f4;
+}
+
+.navbar.dark {
+  background-color: #222;
+}
+
+.navbar h2 {
+  font-size: 1.5em;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.navbar nav ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar nav ul li svg {
+  margin-right: 5px; /* Reduced margin */
+}
+
+
+
+.navbar .theme-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10rem;
+  color: inherit;
+}
+
+.navbar .theme-toggle svg {
+  margin-right: 5rem; /* Reduced margin */
+}
+
+.light .theme-toggle svg {
+  color: #333;
+}
+
+.dark .theme-toggle svg {
+  color: #f4f4f4;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.dashboard .stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s;
+  flex: 1 1 calc(33.333% - 20px);
+  margin: 10px;
+}
+
+.stat.light {
+  background-color: #fff;
+}
+
+.stat.dark {
+  background-color: #444;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.stat p {
+  font-size: 2em;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+table .in-stock {
+  color: green;
+}
+
+table .low-stock {
+  color: orange;
+}
+
+table .out-of-stock {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .navbar .upgrade,
+  .navbar .theme-toggle {
+    margin-left: 0px;
+  }
+
+  .dashboard .stats {
+    flex-direction: column;
+  }
+
+  .stat {
+    flex: 1 1 100%;
+  }
+}
