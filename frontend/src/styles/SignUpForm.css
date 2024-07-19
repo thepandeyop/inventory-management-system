@@ -1,0 +1,50 @@
+
+/* src/styles/SignUpForm.css */
+.form-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form-box h2 {
+  margin: 0 0 10px 0;
+}
+
+.form-box p {
+  margin: 0 0 20px 0;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-box.dark {
+  background-color: #444;
+  color: #f4f4f4;
+}
+
+.form-box.dark input {
+  background-color: #555;
+  color: #f4f4f4;
+  border: 1px solid #666;
+}
+
+.form-box.dark button {
+  background-color: #f4f4f4;
+}

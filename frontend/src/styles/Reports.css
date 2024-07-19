@@ -1,0 +1,64 @@
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --box-background-color: #fff;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  [data-theme='dark'] {
+    --background-color: #333;
+    --text-color: #fff;
+    --box-background-color: #444;
+    --box-shadow-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .reports-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .report-box {
+    background-color: var(--box-background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--box-shadow-color);
+    width: 30%;
+  }
+  
+  .report-box h2 {
+    margin-top: 0;
+  }
+  
+  .report-box p {
+    margin: 0 0 20px;
+  }
+  
+  .report-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .report-metrics div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 768px) {
+    .reports-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .report-box {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+  
