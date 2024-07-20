@@ -1,20 +1,33 @@
 import mongoose from 'mongoose';
 
-const SupplierSchema = new mongoose.Schema({
+const supplierSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    contact_info: {
-        type: String
+    contact: {
+        firstName: {
+            type: String,
+            required: true
+        },
+        lastName: {
+            type: String,
+            required: true
+        }
     },
-    address: {
-        type: String
+    phone: {
+        type: String,
+        required: true
     },
-    notes: {
-        type: String
-    }
+    email: {
+        type: String,
+        required: true
+    },
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }]
 });
 
-const Supplier = mongoose.model('Supplier', SupplierSchema);
+const Supplier = mongoose.model('Supplier', supplierSchema);
 export default Supplier;
