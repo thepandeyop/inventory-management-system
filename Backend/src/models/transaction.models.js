@@ -1,30 +1,50 @@
 import mongoose from 'mongoose';
 
-const InventoryTransactionSchema = new mongoose.Schema({
-    item: {
+const transactionSchema = new mongoose.Schema({
+    customer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Item',
+        ref: 'Customer',
         required: true
     },
-    quantity_change: {
+    products: [{
+        product: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product',
+            required: true
+        },
+        quantity: {
+            type: Number,
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
+        }
+    }],
+    total_amount: {
         type: Number,
-        required: true
-    },
-    transaction_type: {
-        type: String,
-        enum: ['purchase', 'sale', 'adjustment'],
-        required: true
     },
     transaction_date: {
         type: Date,
         default: Date.now
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+    payment_method: {
+        type: String,
+        enum: ['Credit Card', 'Debit Card', 'PayPal', 'Cash on Delivery'],
         required: true
+    },
+    transaction_id: {
+        type: String,
+        required: true,
+        unique: true
     }
 });
 
-const InventoryTransaction = mongoose.model('InventoryTransaction', InventoryTransactionSchema);
-export default InventoryTransaction;
+// Middleware to calculate total amount before saving the transaction
+transactionSchema.pre('save', function(next) {
+    this.total_amount = this.products.reduce((acc, item) => acc + (item.quantity * item.price), 0);
+    next();
+});
+
+const Transaction = mongoose.model('Transaction', transactionSchema);
+export default Transaction;

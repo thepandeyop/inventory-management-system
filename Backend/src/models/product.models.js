@@ -30,6 +30,11 @@ const ProductSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    stock_status: {
+        type: String,
+        enum: ['In Stock', 'Low Stock', 'Out of Stock'],
+        required: true
+    },
     date_added: {
         type: Date,
         default: Date.now
@@ -39,6 +44,13 @@ const ProductSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+
+// Populate the 'supplier' field with the 'name' field from the Supplier schema
+ProductSchema.pre('findOne', function(next) {
+    this.populate('supplier', 'name'); // Populate the 'supplier' field with 'name'
+    next();
+});
+
 
 const Product = mongoose.model('Product', ProductSchema);
 export default Product;
