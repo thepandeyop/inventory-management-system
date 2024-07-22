@@ -9,6 +9,9 @@ import Reports from './components/Reports';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import SignUpLogin from './components/SignUpLogin';
+import AboutUs from './components/AboutUs';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
 import './styles/App.css';
 
 const App = () => {
@@ -31,12 +34,17 @@ const App = () => {
           <Route path="/" element={<NoNavbar><SignUpLogin theme={theme} /></NoNavbar>} />
           <Route path="/signup" element={<NoNavbar><SignUpForm theme={theme} /></NoNavbar>} />
           <Route path="/login" element={<NoNavbar><LoginForm theme={theme} /></NoNavbar>} />
-          <Route path="/Home" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Home toggleTheme={toggleTheme} theme={theme} /></>} />
-          <Route path="/products" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Products /></>} />
-          <Route path="/orders" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Orders /></>} />
-          <Route path="/suppliers" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Suppliers /></>} />
-          <Route path="/reports" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Reports theme={theme} /></>} />
+          <Route path="/home" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Home toggleTheme={toggleTheme} theme={theme} /><Footer /></>} />
+          <Route path="/products" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Products /><Footer /></>} />
+          <Route path="/orders" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Orders /><Footer /></>} />
+          <Route path="/suppliers" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Suppliers /><Footer /></>} />
+          <Route path="/reports" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Reports theme={theme} /><Footer /></>} />
+          <Route path="/about" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><AboutUs /><Footer /></>} />
+          <Route path="/testimonials" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Testimonials /><Footer /></>} />
         </Routes>
+        <AboutUs/>
+        <Testimonials/>
+        
       </div>
     </Router>
   );
@@ -46,7 +54,6 @@ const App = () => {
 const NoNavbar = ({ children }) => {
   const location = useLocation();
   const hideNavbarPaths = ['/', '/login', '/signup'];
-  // No need to define toggleTheme and theme here, they are only used in App component
 
   return (
     <>
