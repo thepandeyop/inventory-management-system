@@ -1,0 +1,204 @@
+/* General body styles for light and dark themes */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body.light {
+  --background: #f0f0f0; /* Light theme background color */
+  --text-color: #444; /* Light theme text color */
+  --secondary-text-color: #333;
+}
+
+body.dark {
+  --background: #333; /* Dark theme background color */
+  --text-color: #ccc; /* Dark theme text color */
+  --secondary-text-color: #f0f0f0;
+}
+
+/* Home container styling */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+/* Parallax background */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transform: translateZ(-1px) scale(2);
+  z-index: -2;
+}
+
+/* Image container styling */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(15deg) rotateX(5deg);
+  margin-bottom: 20px;
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Image overlay for dark theme */
+.image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  filter: blur(10px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Text container styling */
+.text-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.text-container h1, .text-container p {
+  margin: 10px 0;
+  opacity: 0;
+  animation: textFadeIn 1.5s ease forwards;
+  color: var(--secondary-text-color);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.text-container h1 {
+  animation-delay: 0.5s;
+}
+
+.text-container p:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.text-container p:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.text-container p:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.text-container p {
+  font-size: 1.2em;
+}
+
+.home-image:hover {
+  transform: scale(1.05) rotateY(0) rotateX(0);
+}
+
+.text-container h1:hover, .text-container p:hover {
+  color: #ff5722; /* Change color on hover */
+}
+
+/* Common section styling for About Us and Testimonials */
+.about-us, .testimonials {
+  width: 100%;
+  max-width: 800px;
+  margin: 2em 0;
+  padding: 2em;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+.about-us img, .testimonials img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1em;
+}
+
+.about-us h1, .testimonials h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.about-us p, .testimonials p {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+/* Team section styling */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-member {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.team-member img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 0.5em;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin: 0 10px;
+}
+
+/* Testimonial navigation */
+.testimonial-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.testimonial-nav button {
+  padding: 0.5em 1em;
+  background-color: var(--text-color);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
