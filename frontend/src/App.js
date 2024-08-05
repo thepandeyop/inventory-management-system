@@ -42,8 +42,6 @@ const App = () => {
           <Route path="/about" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><AboutUs /><Footer /></>} />
           <Route path="/testimonials" element={<><Navbar toggleTheme={toggleTheme} theme={theme} /><Testimonials /><Footer /></>} />
         </Routes>
-        <AboutUs/>
-        <Testimonials/>
         
       </div>
     </Router>

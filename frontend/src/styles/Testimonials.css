@@ -1,35 +1,43 @@
-.testimonials.light {
-    background-color: var(--background);
-    color: var(--text-color);
-  }
-  
-  .testimonials.dark {
-    background-color: var(--background);
-    color: var(--text-color);
-  }
-  
-  .testimonials h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-  
-  .testimonials p {
-    font-size: 1.2em;
-    margin: 1em 0;
-  }
-  
-  .testimonial-nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
-  }
-  
-  .testimonial-nav button {
-    padding: 0.5em 1em;
-    background-color: var(--text-color);
-    color: var(--background);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+/* Testimonials section styling */
+.testimonials {
+  width: 100%;
+  max-width: 800px;
+  margin: 2em auto; /* Centering */
+  padding: 2em;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+.testimonials img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1em;
+}
+
+.testimonials h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.testimonials p {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+/* Testimonial navigation */
+.testimonial-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.testimonial-nav button {
+  padding: 0.5em 1em;
+  background-color: var(--text-color);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

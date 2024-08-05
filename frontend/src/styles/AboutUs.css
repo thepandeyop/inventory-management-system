@@ -1,54 +1,45 @@
-.about-us.light {
-    background-color: var(--background);
-    color: var(--text-color);
-  }
-  
-  .about-us.dark {
-    background-color: var(--background);
-    color: var(--text-color);
-  }
-  
-  .about-us img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1em;
-  }
-  
-  .about-us h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-  
-  .about-us p {
-    font-size: 1.2em;
-    margin: 1em 0;
-  }
-  
-  .team {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1em;
-  }
-  
-  .team-member {
-    text-align: center;
-  }
-  
-  .team-member img {
-    max-width: 100px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 0.5em;
-  }
-  
-  .social-media {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 0.5em;
-  }
-  
-  .social-media a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  
+/* src/styles/Order.css */
+
+/* About Us section styling */
+.about-us {
+  width: 100%;
+  max-width: 800px;
+  margin: 2em auto; /* Centering */
+  padding: 2em;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+.about-us img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1em;
+}
+
+.about-us h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.about-us p {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+/* Team images styling */
+.team-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.team-images img {
+  max-width: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  padding: 5px;
+}

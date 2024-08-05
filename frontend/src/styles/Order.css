@@ -1,0 +1,77 @@
+/* src/styles/Order.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+  background-color: var(--background);
+  color: var(--text-color);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input, select {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-container {
+    background-color: #333;
+    color: #fff;
+  }
+
+  th {
+    background-color: #444;
+  }
+
+  table, th, td {
+    border-color: #555;
+  }
+}
